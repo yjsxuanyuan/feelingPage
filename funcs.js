@@ -66,6 +66,7 @@ function getPicture() {
       $('.content'+i).animate({opacity: 1}, 300, ()=>{
       $(".content").removeClass("selec")
       $(".content"+i).addClass("selec")})
+      $(".feeling-content").prop('scrollTop','0')
       })
     });
   }
