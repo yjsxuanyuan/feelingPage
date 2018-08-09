@@ -4,6 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
   <title>我们的感想</title>
+  <link rel="stylesheet" type="text/css" href="css/font-awesome.css">
   <style type="text/css">
     * { margin: 0; padding: 0; }
     body, html { height: 100%; overflow: hidden;}
@@ -16,19 +17,23 @@
     .persons-bar {background-color: rgba(100,100,100,.5); margin-top: 15%; font-size: 0px; padding: 0 .2rem; overflow: hidden;}
     .persons { white-space: nowrap; overflow: hidden; list-style: none; }
     .active { border: 1px solid yellow; }
-    .feeling-content { position: relative; width: 6.5rem; height: 64%; background-color: red; margin: .7rem auto 0 auto; padding: .25rem;}
-    .content { display: none; font-size: 14px;}
-    .feeling-content .selec { display: block; }
+    .feeling-content { position: relative; width: 6.2rem; height: 65%;  background-color: rgba(100,100,100,.5); margin: .7rem auto 0 auto; padding: .2rem; overflow-y: scroll; overflow-x: hidden; border-radius: 4px;}
+    .feeling-content::-webkit-scrollbar {display:none}
+    .content { display: none; font-size: 20px; font-family: "楷体"; line-height: 30px; color: white; opacity: 0;}
+    .music-icon { position: absolute; display: block; background: none; border: none; outline: none; background-color: white;  width: .6rem; height: .6rem; border-radius: 50%; top: .35rem; right: .35rem; opacity: .6;}
+    .content h4 { line-height: 40px }
   </style>
   <script src="./jquery.js"></script>
   <script src="./webapp.js"></script>
   <script src="./funcs.js"></script>
   <script>
-    var pos = 0;
-    window.onload = () => {getPicture(); dragMove(); }
+    var pos = 0, rot = 0, x, state = 0
+    window.onload = () => {changeState(); getPicture(); dragMove(); }
   </script>
 </head>
 <body>
+  <audio id="music" src="./bgm.mp3" loop="true" autoplay="true"></audio>
+  <button id="music-icon" class="music-icon" onclick="changeState()"><img src="./music.png" style="height: .4rem" /></button>
   <div class="first-page">
     <button onclick="changeStage()"class="go">
       聆听, 我们的声音    →
@@ -55,21 +60,29 @@
        </ul>
     </div>
     <div class="feeling-content">
-      <div class="content content1 selec">fdsaf</div>
-      <div class="content content2"></div>
-      <div class="content content3"></div>
-      <div class="content content4"></div>
-      <div class="content content5"></div>
-      <div class="content content6"></div>
-      <div class="content content7"></div>
-      <div class="content content8"></div>
-      <div class="content content9"></div>
-      <div class="content content10"></div>
-      <div class="content content11"></div>
-      <div class="content content12"></div>
-      <div class="content content13"></div>
-      <div class="content content14"></div>
-      <div class="content content15"></div>
+      <div class="content content1 selec" style="opacity: 1; display: block;"><h4>王昱鼎：</h4><p>&nbsp;&nbsp;经过两个月的准备，出国前的大致相关准备都做好了。现在是万事俱备只欠东风了。作为团队的一员，我信心满满。。。。。。那是那是不可能的，我。。。我现在慌的一批w(ﾟДﾟ)w。脑海中还有茫茫多的问题</p>
+<p>&nbsp;&nbsp;不过正如指导老师陈晶妍老师在微信群里说过，带着问题去社会实践会比单单跟着团队走收获更多。这趟社会实践也同样是一趟解决问题之旅。在国外如何协调和参与有起码30个人，靠近十组来不同国家地区的团队的集体生活；如何与不同文化背景的幼龄学生相互交流；我能或者我希望从这次实践活动中收获什么…..这些是和个人息息相关的问题。一带一路究竟为沿线国家带来了什么；印尼人对一带一路和中国政策的认识到达了什么程度；一带一路对我们的未来又能有什么影响……这些是与国家政策相关的问题。希望通过这次实践我能够尝试去理解或初步试图得到属于我的这些问题的答案。</p>
+</div>
+      <div class="content content2"><h4>周勃阳：</h4><p>&nbsp;&nbsp;这次的印尼之行，对我来说有着非凡的意义，它是我在追逐人生梦想道路上迈出的第一步。新闻中那些生活在贫穷与苦难中的他国人民，还有为了帮助他们脱离苦海而远离祖国默默奉献一生的中华志士，让我萌生了成为国际人道援建者的梦想。抱着这一梦想我来到浙江大学国际校区，有幸能在这里结识这么多志同道合的同学，更有幸能和他们一起完成这次意义非凡的印尼之旅。即将到来的支教活动以及“一带一路”印尼实地调研，将是我知行合一的开始，人生幸事莫过于明白自己的追梦之路并不孤单。</p></div>
+      <div class="content content3"><h4>潘佳婧：</h4><p>&nbsp;&nbsp;七月的燥热褪去，八月的浙风吹起，期待已久的社会实践活动正在悄悄靠近。沿着丝绸之路往南，我们将与可爱的小朋友们相遇在宁静秀美的岛屿-巴厘岛，展开我们本次的支教活动</p>
+<p>&nbsp;&nbsp;与其说是支教，不如说是感受，是学习，是经历。</p>
+<p>&nbsp;&nbsp;教育的本质是爱，让我们携爱前行，让爱照亮更多的人</p>
+<p>&nbsp;&nbsp;Love will make you glow, 希望通过这次出行，能够帮助到当地的孩子们，传播中国文化，拓宽我们的视野，展现中国青年的世界担当</p>
+</div>
+      <div class="content content4"><h4>杨益坚：</h4><p>&nbsp;&nbsp;浙江大学国际校区的同学们马上就要出发去巴厘岛乌布支教了。我对这次支教充满了期待，很高兴有这次机会来到被称为“天堂之岛”的巴厘岛进行一次“社会实践”（lǚ yǒu），虽然对自己中文教学的能力严重怀疑，但我还是希望能够通过自己精心的准备、负责的态度给乌布的孩子带来一些有用的知识或是积极的影响，希望在支教的过程中能和当地的孩子融洽相处，并且通过和他们交流来共同学习进步。同时积极参与集体活动，增加与同龄人交流合作的经验，锻炼自己的能力。</p></div>
+      <div class="content content5"><h4>陈宇航：</h4><p>&nbsp;&nbsp;一百万颗心期待这个暑期的印尼支教之旅！支教是我很久之前就非常想做的事，现在终于有机会去实, skr skr,有点小兴奋的同时，更多的是无限的期待。期待在这一次支教中做好一个老师的角色，期待在这一次支教中为当地的小朋友带去生动活泼的课，以寓教于乐的方式帮助他们快乐学习，增长知识，当然也期待这次的社会实践将为自己带来怎样的收获！</p></div>
+      <div class="content content6"><h4>袁金松：</h4><p>&nbsp;&nbsp;这次的社会实践不仅仅是一个项目，更是一扇通往未知的大门。门的另一侧，不是司空见惯的中国风景，不是一如既往的中国文化。那里有不同的意识形态，不同的文化氛围，不同的人情风貌。在这种思想的碰撞中，在文化的激荡中，我定能将自己所学去芜存菁，视野不再局限在中国，而是以一个更加国际化、客观化的视野看待中国，看待世界。</p></div>
+      <div class="content content7"><h4>古雅诗：</h4><p>&nbsp;&nbsp;支教活动在高中也参与过，那是在城市边缘的农名工子女小学的帮扶。在那些短暂的接触里，我们给予最多的不是知识，而是孩子们对未来的“希望”。我们更想让他们知道为什么要认真学习，你的梦想应当是怎样，要怎样去实现这个目标。我们不希望支教留下的只是几堂课的知识那么简单。</p>
+<p>&nbsp;&nbsp;这次前往巴厘岛的境外支教，我对它的期待也不会止步于中文或计算机技术的教学。中国的人与文化，世界格局的风云动向，印尼的现状与发展，都是这次活动里我想拆合吐纳的话题。此程漫长又短暂，希望之后在彼此心里都能留下些，无论过了多久依然认为“值得”的东西。</p>
+</div>
+      <div class="content content8"><h4>李钰琳：</h4><p>&nbsp;&nbsp;一提起印尼巴厘岛，许多人的第一反应便都是“旅游胜地”。然而身为应当拥有国际视野的浙大国际校区学生，我们对于印尼这个一带一路国家的了解，决不应该只限于“旅游”这样的层面。此次与同学们一起深入位于印尼巴厘岛的乌布，既能够探访当地基层普通家庭，于细微之中观察一带一路战略在民众生活中的点滴浸润；也有机会接触当地政府工作人员，于宏观层面探讨我国与印尼建立的经济文化纽带。希望这一次的实践能够让我们看到一个真实、立体的印尼，也能让我们对于地球村的现状与前景拥有一份更加清晰、深刻的认识。</p></div>
+      <div class="content content9"><h4>范稳俨：</h4><p>&nbsp;&nbsp;8月4日，我们将前往印度尼西亚巴厘岛的巴布等城市进行支教。巴厘岛位于南半球，这也将是我第一次访问这个美丽星球的赤道以南之地。</p><p>&nbsp;&nbsp;巴厘岛是印度尼西亚一万多个岛屿当中最美丽、最知名的岛屿之一。巴厘岛沙滩辽阔、海水清澈，每年来此游览的各国游客络绎不绝。旅游业也是巴厘岛的支柱产业。那么，生活在旅游胜地巴厘岛的平民百姓究竟处于怎样的生活状态？他们需要什么？出生在巴厘岛的小朋友们又知道了解什么？出生在一个国际游客频繁到来的岛屿，他们对这个世界是怎么认识的？这是我非常关心、非常想了解的事情。</p><p>&nbsp;&nbsp;一带一路是我国国家级顶层合作倡议。印度尼西亚市场潜力巨大，是“一带一路”东盟地区的关键一环。生活在一个各国民众都经常前来访问的岛屿，巴厘岛人对当今世界上面临的诸多议题一定有自己的想法。与巴厘岛人进行交流，能够让我学习很多。我希望通过对巴厘岛的深入访问、交流、沟通，能帮助我更好了解当地人对一些问题的想法，从而能够为推动共建一带一路做出一份微小的贡献。</p></div>
+      <div class="content content10"><h4>陈捷挺：</h4><p>&nbsp;&nbsp;印度尼西亚是一个淳朴的国家，虽然没有欧美国家那样发达，但很真实，对中国人非常友好。对我来说，这是一次体验文化交流冲撞与融合的机会，是作为国际校区学生向外迈出的重要一步。期待几天后与当地孩子们的相遇，体验当地的民俗民风。</p></div>
+      <div class="content content11"><h4>陆淏凡：</h4><p>&nbsp;&nbsp;作为负责团队外联的成员(　´・◡・｀)，对于即将到来的这次实践活动，还是抱有期待而且紧张的心情〜(￣△￣〜) (〜￣△￣)〜。虽然已经和当地的合作方做好了对接工作，完成了采访对象的预约(́安◞౪◟排‵)，但在具体的落实中可以想象还是会遇到各种各样的困难。希望自己能对得起组织和同学给予我的这份信任( • ̀ω ⁃᷄)✧。在活动的具体落实中也积极地和对接方沟通，努力解决好问题ᖗ乛◡乛ᖘ  完美。</p></div>
+      <div class="content content12"><h4>李树人：</h4><p>&nbsp;&nbsp;实习结束，回到校区准备社会实践时，负责实习工作的前辈一句话让我记忆深刻。在我们实习总结报告结束，听说我们都有社会实践时，前辈说：“你们这些大学生，现在都挺有追求啊。”</p><p>&nbsp;&nbsp;有追求么。我一直觉得自己还是个没啥追求的人，但我当时听说这个项目时还是坚定的报了名。所以我心底到底对这次社会实践有什么期待呢……当我拿起自己的护照和学生证，看到上面的字时，我知道了我自己在期待什么。“中华人民共和国”，“浙江大学”，这两个词我们日常生活中见了千千万万次，但带着这两个词出国，对我而言还是第一次。家国情怀，当你带着一项使命走出国门，你才会明白这个词究竟是何意义。我以前总是觉得，出国社会实践无非就是开阔一下眼界，长长自己的见识，帮助一下当地的学生。这些都是有意义的工作，然而我的视野从未提高到“家国情怀”这个词上面。</p><p>&nbsp;&nbsp;现在想来，我们这些人的身上，还肩负着更为重要的东西。</p></div>
+      <div class="content content13"><h4>赖心怡：</h4><p>&nbsp;&nbsp;说起巴厘岛，我们可真的不是去玩的！发达的旅游业背后是怎样的经济生态？遍地的游客之外当地居民又是怎样的生活状态？一带一路下中国的影响力又是如何给印尼带来改变的？民心相通是否真的像资金融通一样顺利？带着满满的好奇和期待出发，我希望看到印尼乌布更真实的一面。我希望能给小朋友们带去有趣的计算机知识，也让他们对中国有更多的了解，更希望能通过这次实践丰富我对社会的认识和思考。祝愿本次活动圆满成功！</p></div>
+      <div class="content content14"><h4>胡昊：</h4><p>&nbsp;&nbsp;等了一个多月终于轮到我们团队出发啦！</p><p>&nbsp;&nbsp;带着满满的希望出发，希望我们这次的印尼支教行可以很好的帮助到那里的小盆友们，也让他们能够对我们中国有更多的了解。也希望我们志愿者们也可以更好的了解印度尼西亚这个国家，也能够在这次支教活动中提升自己，超越自己！</p></div>
+      <div class="content content15"><h4>胡江浛：</h4><p>&nbsp;&nbsp;即将踏上巴厘之途，心中不免有些小激动。此次支教活动中，我将为当地的小朋友介绍计算机的作用以及如何进行一些基本的操作，让他们能更好地融入互联网时代。期待本次活动顺利、成功地完成！ </p></div>
     </div>
   </div>
 </body>
