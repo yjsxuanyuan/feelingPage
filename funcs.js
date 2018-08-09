@@ -28,6 +28,8 @@ function dragMove() {
   now_obj.on("touchend",(e)=>{
     var e = e || window.event
     pos = pos + ini_pos - now_pos
+    if (pos > parseInt($(".persons").css('width'))) pos = parseInt($(".persons").css('width')) 
+    if (pos < 0) pos = 0
   })
 }
 
