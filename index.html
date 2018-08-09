@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <title>我们的感想</title>
+  <style type="text/css">
+    * { margin: 0; padding: 0; }
+    body, html { height: 100%;}
+    html { font-size: 100px; }
+    body { background-image: url('background.gif'); background-size: cover; background-repeat: no-repeat;}
+    .first-page, .second-page { height: 100%; }
+    .go { position: absolute; display: block; width: 3.5rem; height: .6rem; background: none; outline: none; border:none; background-color: yellow; bottom: .6rem; left: 0; right: 0; margin: 0 auto; border-radius: 4px; color: black; font-size: 14px; }
+    .person { display: inline-block; height: .8rem; width:.8rem; margin: .1rem .1rem; border-radius: 50%; box-sizing: border-box; background-size: cover;}
+    .persons-bar {background-color: rgba(100,100,100,.5); margin-top: 15%; font-size: 0px; padding: 0 .2rem; overflow: hidden;}
+    .persons { white-space: nowrap; overflow: hidden; list-style: none; }
+    .active { border: 1px solid yellow; }
+    .feeling-content { position: relative; width: 6.5rem; height: 64%; background-color: red; margin: .7rem auto 0 auto; }
+  </style>
+  <script src="./jquery.js"></script>
+  <script src="./webapp.js"></script>
+  <script src="./funcs.js"></script>
+  <script>
+    var pos = 0;
+    window.onload = () => {getPicture(); dragMove(); }
+  </script>
+</head>
+<body>
+  <div class="first-page" style="display: none">
+    <button class="go">
+      聆听, 我们的声音    →
+    </button>
+  </div>
+  <div class="second-page">
+    <div class="persons-bar">
+       <ul class="persons">
+         <li class="person person1 active"></li>
+         <li class="person person2"></li>
+         <li class="person person3"></li>
+         <li class="person person4"></li>
+         <li class="person person5"></li>
+         <li class="person person6"></li>
+         <li class="person person7"></li>
+         <li class="person person8"></li>
+         <li class="person person9"></li>
+         <li class="person person10"></li>
+         <li class="person person11"></li>
+         <li class="person person12"></li>
+         <li class="person person13"></li>
+         <li class="person person14"></li>
+         <li class="person person15"></li>
+       </ul>
+    </div>
+    <div class="feeling-content"></div>
+  </div>
+</body>
+</html>
