@@ -10,12 +10,15 @@
     html { font-size: 100px; }
     body { background-image: url('background.gif'); background-size: cover; background-repeat: no-repeat;}
     .first-page, .second-page { height: 100%; }
+    .second-page {opacity: 0;}
     .go { position: absolute; display: block; width: 3.5rem; height: .6rem; background: none; outline: none; border:none; background-color: yellow; bottom: .6rem; left: 0; right: 0; margin: 0 auto; border-radius: 4px; color: black; font-size: 14px; }
     .person { display: inline-block; height: .8rem; width:.8rem; margin: .1rem .1rem; border-radius: 50%; box-sizing: border-box; background-size: cover;}
     .persons-bar {background-color: rgba(100,100,100,.5); margin-top: 15%; font-size: 0px; padding: 0 .2rem; overflow: hidden;}
     .persons { white-space: nowrap; overflow: hidden; list-style: none; }
     .active { border: 1px solid yellow; }
-    .feeling-content { position: relative; width: 6.5rem; height: 64%; background-color: red; margin: .7rem auto 0 auto; }
+    .feeling-content { position: relative; width: 6.5rem; height: 64%; background-color: red; margin: .7rem auto 0 auto; padding: .25rem;}
+    .content { display: none; font-size: 14px;}
+    .feeling-content .selec { display: block; }
   </style>
   <script src="./jquery.js"></script>
   <script src="./webapp.js"></script>
@@ -26,12 +29,12 @@
   </script>
 </head>
 <body>
-  <div class="first-page" style="display: none">
-    <button class="go">
+  <div class="first-page">
+    <button onclick="changeStage()"class="go">
       聆听, 我们的声音    →
     </button>
   </div>
-  <div class="second-page">
+  <div class="second-page" style="display: none">
     <div class="persons-bar">
        <ul class="persons">
          <li class="person person1 active"></li>
@@ -51,7 +54,23 @@
          <li class="person person15"></li>
        </ul>
     </div>
-    <div class="feeling-content"></div>
+    <div class="feeling-content">
+      <div class="content content1 selec">fdsaf</div>
+      <div class="content content2"></div>
+      <div class="content content3"></div>
+      <div class="content content4"></div>
+      <div class="content content5"></div>
+      <div class="content content6"></div>
+      <div class="content content7"></div>
+      <div class="content content8"></div>
+      <div class="content content9"></div>
+      <div class="content content10"></div>
+      <div class="content content11"></div>
+      <div class="content content12"></div>
+      <div class="content content13"></div>
+      <div class="content content14"></div>
+      <div class="content content15"></div>
+    </div>
   </div>
 </body>
 </html>

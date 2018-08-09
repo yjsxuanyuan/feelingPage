@@ -1,3 +1,11 @@
+function changeStage() {
+  $('.first-page').animate({opacity: 0}, 1000, ()=>{
+    $('.first-page').css('display','none')
+    $('.second-page').css('display','block')
+    $('.second-page').animate({opacity: 1}, 1000)
+  })
+}
+
 function changePos(v) {
   if (v > parseInt($(".persons").css('width'))) v = parseInt($(".persons").css('width')) 
   if (v < 0) v = 0
