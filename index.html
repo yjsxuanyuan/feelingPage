@@ -6,21 +6,24 @@
   <title>我们的感想</title>
   <style type="text/css">
     * { margin: 0; padding: 0; }
-    body, html { height: 100%; overflow: hidden;}
+    body, html { height: 100%;}
     html { font-size: 100px; }
-    body { background-image: url('background.gif'); background-size: cover; background-repeat: no-repeat;}
-    .first-page, .second-page { height: 100%; }
+    body { background-image: url('background.gif'); background-size: cover; background-repeat: no-repeat; }
+    .first-page, .second-page { height: 100%; width: 100%; position: absolute; top: 0;}
     .second-page {opacity: 0;}
-    .go { position: absolute; display: block; width: 3.5rem; height: .6rem; background: none; outline: none; border:none; background-color: yellow; bottom: .6rem; left: 0; right: 0; margin: 0 auto; border-radius: 4px; color: black; font-size: 14px; }
+    .go { display: block; width: 3.5rem; height: .6rem; background: none; outline: none; border:none; background-color: yellow; bottom: .6rem; left: 0; right: 0; margin: 1rem auto; border-radius: 4px; color: black; font-size: 14px; }
     .person { display: inline-block; height: .8rem; width:.8rem; margin: .1rem .1rem; border-radius: 50%; box-sizing: border-box; background-size: cover;}
     .persons-bar {background-color: rgba(100,100,100,.5); margin-top: 15%; font-size: 0px; padding: 0 .2rem; overflow: hidden;}
     .persons { white-space: nowrap; overflow: hidden; list-style: none; }
     .active { border: 1px solid yellow; }
-    .feeling-content { position: relative; width: 6.2rem; height: 65%;  background-color: rgba(100,100,100,.5); margin: .7rem auto 0 auto; padding: .2rem; overflow-y: scroll; overflow-x: hidden; border-radius: 4px;}
+    .feeling-content { position: relative; width: 6.2rem; height: 55%;  background-color: rgba(100,100,100,.5); margin: .7rem auto 0 auto; padding: .2rem; overflow-y: scroll; overflow-x: hidden; border-radius: 4px;}
     .feeling-content::-webkit-scrollbar {display:none}
     .content { display: none; font-size: 20px; font-family: "KaiTi"; line-height: 30px; color: white; opacity: 0;}
     .music-icon { position: absolute; display: block; background: none; border: none; outline: none; background-color: white;  width: .6rem; height: .6rem; border-radius: 50%; top: .35rem; right: .35rem; opacity: .6;}
-    .content h4 { line-height: 40px }
+    .pic { width: 5.5rem; margin-top: 2rem;}
+    .content h4 { line-height: 40px; }
+    hr { border:none; height: 1px; background-image: linear-gradient(to right, rgba(255,255,255,.3),rgba(153,153,153,1),rgba(255,255,255,.3)); margin-bottom: 4px;}
+    footer {position: fixed; bottom: 0; padding-bottom: 4px; width: 100%; color:white; font-size: 10px; text-align: center; color: rgba(200,200,200,1);}
   </style>
   <script src="./jquery.js"></script>
   <script src="./webapp.js"></script>
@@ -33,7 +36,8 @@
 <body>
   <audio id="music" src="./bgm.mp3" loop="true" preload="auto"></audio>
   <button id="music-icon" class="music-icon" onclick="changeState()"><img src="./music.png" style="height: .4rem" /></button>
-  <div class="first-page">
+  <div class="first-page" style="text-align: center">
+    <img class="pic" src="1.png">
     <button onclick="changeStage()"class="go">
       聆听, 我们的声音    →
     </button>
@@ -84,5 +88,10 @@
       <div class="content content15"><h4>胡江浛：</h4><p>&nbsp;&nbsp;即将踏上巴厘之途，心中不免有些小激动。此次支教活动中，我将为当地的小朋友介绍计算机的作用以及如何进行一些基本的操作，让他们能更好地融入互联网时代。期待本次活动顺利、成功地完成！ </p></div>
     </div>
   </div>
+  <footer>
+    <hr>
+    <p> 印尼社会实践团 </p>
+    <p> Made By 轩辕</p>
+  </footer>
 </body>
 </html>
